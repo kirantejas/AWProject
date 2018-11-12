@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level3 : MonoBehaviour {
 
@@ -46,5 +47,25 @@ public class Level3 : MonoBehaviour {
     public void StopWheel()
     {
         isRotateWheel = false;
+    }
+
+    public void onClickPrevious()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+
+    public void onClickHome()
+    {
+        SceneManager.LoadScene("TutorialHome");
+    }
+
+    public void onClickAim()
+    {
+
+    }
+
+    public void onClickNext()
+    {
+        SceneManager.LoadScene("Level4");
     }
 }

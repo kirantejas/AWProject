@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level2 : MonoBehaviour {
 
@@ -54,5 +55,25 @@ public class Level2 : MonoBehaviour {
             }
         }
         return filedname;
+    }
+
+    public void onClickPrevious()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void onClickHome()
+    {
+        SceneManager.LoadScene("TutorialHome");
+    }
+
+    public void onClickAim()
+    {
+
+    }
+
+    public void onClickNext()
+    {
+        SceneManager.LoadScene("Level3");
     }
 }
