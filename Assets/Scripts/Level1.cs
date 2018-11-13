@@ -81,7 +81,7 @@ public class Level1 : MonoBehaviour
 
     public void onClickHome()
     {
-        SceneManager.LoadScene("TutorialHome");
+        SceneManager.LoadScene("WelcomeScreen");
     }
 
     public void onClickAim()

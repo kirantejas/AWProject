@@ -28,7 +28,7 @@ public class Level3 : MonoBehaviour {
         if (isRotateWheel)
         {
             wheel = GameObject.Find("WheelBall");
-            wheel.transform.Rotate(new Vector3(Time.deltaTime * 500, 0, 0));
+            wheel.transform.Rotate(new Vector3(0, Time.deltaTime * 500, 0));
         }
     }
 
@@ -56,7 +56,7 @@ public class Level3 : MonoBehaviour {
 
     public void onClickHome()
     {
-        SceneManager.LoadScene("TutorialHome");
+        SceneManager.LoadScene("WelcomeScreen");
     }
 
     public void onClickAim()

@@ -1361,7 +1361,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Aim
+  m_Text: Tutorial 3 Aim
 --- !u!222 &1127534412
 CanvasRenderer:
   m_ObjectHideFlags: 0
