@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
 
 public class Login : MonoBehaviour {
  #region Variables
@@ -84,7 +85,7 @@ public class Login : MonoBehaviour {
 
     public void SceneSwitcher()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("WelcomeScreen");
     }
 
     void CreateAccountGUI()
@@ -171,17 +172,35 @@ public class Login : MonoBehaviour {
         {
             Debug.Log(LoginWww.text);
             string CreateAccountReturn = LoginWww.text;
-            if (CreateAccountReturn == "success")
+            Response json = JsonConvert.DeserializeObject<Response>(CreateAccountReturn);
+            if (json.status_code == 200)
             {
                 Debug.Log("Success: Login");
                 currentMenu = "Login";
+                Assets.Scripts.globalClass.Id = json.id;
+                Assets.Scripts.globalClass.Email = json.email;
+                Assets.Scripts.globalClass.HandPreference = json.hand_preference;
+                Assets.Scripts.globalClass.Age = json.age;
+                SceneSwitcher();
             }
         }
         Debug.Log("Before Sceneswitcher function");
-        SceneSwitcher();
+        
 
     }
 
     #endregion
+
+}
+
+public class Response
+{
+    public int age { get; set; }
+    public string email { get; set; }
+
+    public int hand_preference { get; set; }
+    public int id { get; set; }
+    public int status_code { get; set; }
+    public string text { get; set; }
 
 }

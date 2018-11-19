@@ -4,9 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using UnityEngine.SceneManagement;
-
+using Assets.Scripts;
+using System;
 
 public class buttonHandler : MonoBehaviour {
+
+    private readonly string url = "http://ramesh8856.pythonanywhere.com/";
+    DateTime startTime;
+    DateTime endTime;
+    TimeSpan timeDiff;
 
     private Button myButton_instructions;
     private Button myButton_play;
@@ -29,7 +35,8 @@ public class buttonHandler : MonoBehaviour {
     public void Button_OnClick()
     {
         Debug.Log("Instructions Button Clicked");
-
+        startTime = DateTime.Now;
+        StartCoroutine(MakeApiRequest(globalClass.Id, 0, 1, 0));
         myButton_instructions = GameObject.Find("Button").GetComponent<Button>();
         myButton_instructions.gameObject.SetActive(false);
 
@@ -47,7 +54,9 @@ public class buttonHandler : MonoBehaviour {
     public void backButton_OnClick()
     {
         Debug.Log("Back Button Clicked");
-       
+        timeDiff = DateTime.Now - startTime;
+        StartCoroutine(LogLevelStats(globalClass.Id, 0, (int)timeDiff.TotalSeconds));
+
         backButton = getInactiveGameObject("Button_Back").GetComponent<Button>();
         backButton.gameObject.SetActive(false);
 
@@ -79,6 +88,60 @@ public class buttonHandler : MonoBehaviour {
 
     public void onClickStartLearning()
     {
+        StartCoroutine(MakeApiRequest(globalClass.Id, 0, 2, 0));
         SceneManager.LoadScene("TutorialHome");
     }
+
+    #region Couroutiune
+    IEnumerator LogLevelStats(int userId, int level, int time)
+    {
+        WWWForm Form = new WWWForm();
+        Form.AddField("user_id", userId);
+        Form.AddField("level", level);
+        Form.AddField("time", time);
+        WWW CreateAccountWww = new WWW(url + "levelstats", Form);
+        yield return CreateAccountWww;
+
+        if (CreateAccountWww.error != null)
+        {
+            Debug.LogError("Cannot connect to Level stats creation");
+        }
+        else
+        {
+            string CreateAccountReturn = CreateAccountWww.text;
+            if (CreateAccountReturn == "success")
+            {
+                Debug.Log("Success: Level stats log entry");
+
+            }
+        }
+    }
+    IEnumerator MakeApiRequest(int UserId, int Level, int BtnId, int IsExercise)
+    {
+
+
+        WWWForm Form = new WWWForm();
+        Form.AddField("user_id", UserId);
+        Form.AddField("level", Level);
+        Form.AddField("btn_id", BtnId);
+        Form.AddField("is_exercise", IsExercise);
+        WWW CreateAccountWww = new WWW(url + "btnclicks", Form);
+        yield return CreateAccountWww;
+
+        if (CreateAccountWww.error != null)
+        {
+            Debug.LogError("Cannot connect to Account creation");
+        }
+        else
+        {
+            string CreateAccountReturn = CreateAccountWww.text;
+            if (CreateAccountReturn == "success")
+            {
+                Debug.Log("Success: Btn log entry");
+
+            }
+        }
+
+    }
+    #endregion
 }
