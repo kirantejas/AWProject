@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 983855752}
   - component: {fileID: 983855755}
   - component: {fileID: 983855751}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   NCPassword: 
   HandPreference: 
   Age: 
-  X: 60
-  Y: 60
-  Width: 200
-  Height: 300
+  X: 0
+  Y: 0
+  Width: 0
+  Height: 0
