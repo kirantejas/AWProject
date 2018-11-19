@@ -86,9 +86,22 @@ public class Level1 : MonoBehaviour
 
     public void onClickAim()
     {
-        
+        GameObject window = getInactiveInCanvas("popupAim");
+        window.SetActive(true);
     }
-
+    public GameObject getInactiveInCanvas(string objectName)
+    {
+        GameObject filedname = null;
+        Transform[] trans = GameObject.Find("Canvas").GetComponentsInChildren<Transform>(true);
+        foreach (Transform t in trans)
+        {
+            if (t.gameObject.name == objectName)
+            {
+                filedname = t.gameObject;
+            }
+        }
+        return filedname;
+    }
     public void onClickNext()
     {
         SceneManager.LoadScene("Level2");

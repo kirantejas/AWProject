@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class Level4 : MonoBehaviour {
 
     public static bool isGreen;
-    public GameObject window;
-    public Text messageField;
 	// Use this for initialization
 	void Start () {
         isGreen = true;
@@ -21,8 +19,7 @@ public class Level4 : MonoBehaviour {
 
     public void privateVariable()
     {
-        //messageField.text = "Hello";
-        window = getInactivePopup("popup");
+        GameObject window = getInactiveInCanvas("popup");
         window.SetActive(true);
     }
 
@@ -67,7 +64,7 @@ public class Level4 : MonoBehaviour {
         }
         return filedname;
     }
-    public GameObject getInactivePopup(string objectName)
+    public GameObject getInactiveInCanvas(string objectName)
     {
         GameObject filedname = null;
         Transform[] trans = GameObject.Find("Canvas").GetComponentsInChildren<Transform>(true);
@@ -93,6 +90,7 @@ public class Level4 : MonoBehaviour {
 
     public void onClickAim()
     {
-
+        GameObject window = getInactiveInCanvas("popupAim");
+        window.SetActive(true);
     }
 }
