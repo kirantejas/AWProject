@@ -30,7 +30,7 @@ public class Level4 : MonoBehaviour {
     {
         GameObject window = getInactiveInCanvas("popup");
         StartCoroutine(MakeApiRequest(globalClass.Id, 4, 1, 0));
-        window = getInactivePopup("popup");
+        window = getInactiveInCanvas("popup");
         window.SetActive(true);
     }
 
