@@ -1991,7 +1991,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1641870407961998, guid: 249ea362fd7ffd346a6c50f5111cc228, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224055571772059612, guid: 249ea362fd7ffd346a6c50f5111cc228,
         type: 2}
@@ -2007,6 +2007,16 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.z
       value: 1.1369311
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793873208016614, guid: 249ea362fd7ffd346a6c50f5111cc228,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Creating an instance with parameterised constructor
+
+
+        The constructor of the class Car expectes an argument which is the color of
+        the object that is to be created. With different colors passed objects of
+        different colors are created'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 249ea362fd7ffd346a6c50f5111cc228, type: 2}

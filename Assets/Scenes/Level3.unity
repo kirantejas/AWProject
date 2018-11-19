@@ -1282,7 +1282,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1641870407961998, guid: 249ea362fd7ffd346a6c50f5111cc228, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224055571772059612, guid: 249ea362fd7ffd346a6c50f5111cc228,
         type: 2}
@@ -1298,6 +1298,16 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.z
       value: 1.0424479
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793873208016614, guid: 249ea362fd7ffd346a6c50f5111cc228,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Calling member functions
+
+
+
+        Stop, Rotate are the methods defined on both the wheel and car classes. Up
+        on click of any of the buttons corresponding member functions are executed.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 249ea362fd7ffd346a6c50f5111cc228, type: 2}
