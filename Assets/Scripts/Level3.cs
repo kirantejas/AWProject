@@ -13,6 +13,7 @@ public class Level3 : MonoBehaviour {
     TimeSpan timeDiff;
     GameObject jeep;
     GameObject wheel;
+    String alignment;
     public static bool isRotateJeep;
     public static bool isRotateWheel;
 
@@ -21,6 +22,15 @@ public class Level3 : MonoBehaviour {
         isRotateJeep = false;
         isRotateWheel = false;
         startTime = DateTime.Now;
+        alignment = "left";
+        if (alignment.Trim().Equals("left"))
+        {
+            GameObject[] btns = GameObject.FindGameObjectsWithTag("movableButton");
+            foreach (GameObject btn in btns)
+            {
+                btn.transform.Translate(new Vector3(-800, 0, 0));
+            }
+        }
     }
 	
 	// Update is called once per frame

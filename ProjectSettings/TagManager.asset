@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - popup
+  - movableButton
   layers:
   - Default
   - TransparentFX

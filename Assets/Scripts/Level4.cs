@@ -14,11 +14,21 @@ public class Level4 : MonoBehaviour {
     DateTime startTime;
     DateTime endTime;
     TimeSpan timeDiff;
+    String alignment;
 
     // Use this for initialization
     void Start () {
         isGreen = true;
         startTime = DateTime.Now;
+        alignment = "left";
+        if (alignment.Trim().Equals("left"))
+        {
+            GameObject[] btns = GameObject.FindGameObjectsWithTag("movableButton");
+            foreach (GameObject btn in btns)
+            {
+                btn.transform.Translate(new Vector3(-1000, 0, 0));
+            }
+        }
     }
 	
 	// Update is called once per frame

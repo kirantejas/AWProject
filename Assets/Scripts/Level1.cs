@@ -11,12 +11,22 @@ public class Level1 : MonoBehaviour
     DateTime startTime;
     DateTime endTime;
     TimeSpan timeDiff;
+    String alignment;
 
     private readonly string url = "http://ramesh8856.pythonanywhere.com/";
     // Use this for initialization
     void Start()
     {
         startTime = DateTime.Now;
+        alignment = "left";
+        if (alignment.Trim().Equals("left"))
+        {
+            GameObject[] btns = GameObject.FindGameObjectsWithTag("movableButton");
+            foreach (GameObject btn in btns)
+            {
+                btn.transform.Translate(new Vector3(-700, 0, 0));
+            }
+        }
     }
 
     // Update is called once per frame

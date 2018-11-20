@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 341272699}
   m_Layer: 5
   m_Name: CarStop
-  m_TagString: Untagged
+  m_TagString: movableButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 567704438}
   m_Layer: 5
   m_Name: CarRotate
-  m_TagString: Untagged
+  m_TagString: movableButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1330,7 +1330,7 @@ GameObject:
   - component: {fileID: 957988648}
   m_Layer: 5
   m_Name: WheelRotate
-  m_TagString: Untagged
+  m_TagString: movableButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1941,7 +1941,7 @@ GameObject:
   - component: {fileID: 1548860858}
   m_Layer: 5
   m_Name: WheelStop
-  m_TagString: Untagged
+  m_TagString: movableButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

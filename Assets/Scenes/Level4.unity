@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 809639332}
   m_Layer: 5
   m_Name: PublicFunction
-  m_TagString: Untagged
+  m_TagString: movableButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 1474165147}
   m_Layer: 5
   m_Name: PrivateVariable
-  m_TagString: Untagged
+  m_TagString: movableButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
