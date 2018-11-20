@@ -10,10 +10,20 @@ public class Level2 : MonoBehaviour {
     DateTime startTime;
     DateTime endTime;
     TimeSpan timeDiff;
+    String alignment;
 
     // Use this for initialization
     void Start () {
         startTime = DateTime.Now;
+        alignment = "left";
+        if (alignment.Trim().Equals("left"))
+        {
+            GameObject[] btns = GameObject.FindGameObjectsWithTag("movableButton");
+            foreach (GameObject btn in btns)
+            {
+                btn.transform.Translate(new Vector3(-800, 0, 0));
+            }
+        }
     }
 	
 	// Update is called once per frame
@@ -82,10 +92,23 @@ public class Level2 : MonoBehaviour {
 
         SceneManager.LoadScene("WelcomeScreen");
     }
-
+    public GameObject getInactiveInCanvas(string objectName)
+    {
+        GameObject filedname = null;
+        Transform[] trans = GameObject.Find("Canvas").GetComponentsInChildren<Transform>(true);
+        foreach (Transform t in trans)
+        {
+            if (t.gameObject.name == objectName)
+            {
+                filedname = t.gameObject;
+            }
+        }
+        return filedname;
+    }
     public void onClickAim()
     {
-
+        GameObject window = getInactiveInCanvas("popupAim");
+        window.SetActive(true);
     }
 
     public void onClickNext()

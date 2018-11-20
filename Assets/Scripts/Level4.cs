@@ -10,17 +10,25 @@ public class Level4 : MonoBehaviour {
 
     private readonly string url = "http://ramesh8856.pythonanywhere.com/";
     public static bool isGreen;
-    public GameObject window;
-    public Text messageField;
 
     DateTime startTime;
     DateTime endTime;
     TimeSpan timeDiff;
+    String alignment;
 
     // Use this for initialization
     void Start () {
         isGreen = true;
         startTime = DateTime.Now;
+        alignment = "left";
+        if (alignment.Trim().Equals("left"))
+        {
+            GameObject[] btns = GameObject.FindGameObjectsWithTag("movableButton");
+            foreach (GameObject btn in btns)
+            {
+                btn.transform.Translate(new Vector3(-1000, 0, 0));
+            }
+        }
     }
 	
 	// Update is called once per frame
@@ -30,9 +38,9 @@ public class Level4 : MonoBehaviour {
 
     public void privateVariable()
     {
-        //messageField.text = "Hello";
+        GameObject window = getInactiveInCanvas("popup");
         StartCoroutine(MakeApiRequest(globalClass.Id, 4, 1, 0));
-        window = getInactivePopup("popup");
+        window = getInactiveInCanvas("popup");
         window.SetActive(true);
     }
 
@@ -78,7 +86,7 @@ public class Level4 : MonoBehaviour {
         }
         return filedname;
     }
-    public GameObject getInactivePopup(string objectName)
+    public GameObject getInactiveInCanvas(string objectName)
     {
         GameObject filedname = null;
         Transform[] trans = GameObject.Find("Canvas").GetComponentsInChildren<Transform>(true);
@@ -108,7 +116,8 @@ public class Level4 : MonoBehaviour {
 
     public void onClickAim()
     {
-
+        GameObject window = getInactiveInCanvas("popupAim");
+        window.SetActive(true);
     }
 
     #region Couroutiune
