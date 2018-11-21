@@ -14,14 +14,12 @@ public class Level4 : MonoBehaviour {
     DateTime startTime;
     DateTime endTime;
     TimeSpan timeDiff;
-    String alignment;
 
     // Use this for initialization
     void Start () {
         isGreen = true;
         startTime = DateTime.Now;
-        alignment = "left";
-        if (alignment.Trim().Equals("left"))
+        if (globalClass.HandPreference.Equals("left"))
         {
             GameObject[] btns = GameObject.FindGameObjectsWithTag("movableButton");
             foreach (GameObject btn in btns)

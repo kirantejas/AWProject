@@ -13,7 +13,6 @@ public class Level3 : MonoBehaviour {
     TimeSpan timeDiff;
     GameObject jeep;
     GameObject wheel;
-    String alignment;
     public static bool isRotateJeep;
     public static bool isRotateWheel;
 
@@ -22,8 +21,7 @@ public class Level3 : MonoBehaviour {
         isRotateJeep = false;
         isRotateWheel = false;
         startTime = DateTime.Now;
-        alignment = "left";
-        if (alignment.Trim().Equals("left"))
+        if (globalClass.HandPreference.Equals("left"))
         {
             GameObject[] btns = GameObject.FindGameObjectsWithTag("movableButton");
             foreach (GameObject btn in btns)
