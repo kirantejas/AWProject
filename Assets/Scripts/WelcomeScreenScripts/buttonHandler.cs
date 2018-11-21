@@ -92,6 +92,11 @@ public class buttonHandler : MonoBehaviour {
         SceneManager.LoadScene("TutorialHome");
     }
 
+    public void onClickStartExercise()
+    {
+        SceneManager.LoadScene("Exercise1");
+    }
+
     #region Couroutiune
     IEnumerator LogLevelStats(int userId, int level, int time)
     {

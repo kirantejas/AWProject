@@ -120,6 +120,11 @@ public class Level4 : MonoBehaviour {
         window.SetActive(true);
     }
 
+    public void onClickNext()
+    {
+        SceneManager.LoadScene("Exercise1");
+    }
+
     #region Couroutiune
     IEnumerator LogLevelStats(int userId, int level, int time)
     {
