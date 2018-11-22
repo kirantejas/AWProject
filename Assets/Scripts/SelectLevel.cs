@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SelectLevel : MonoBehaviour {
 
+ 
 	public static string levelSelected;
 	// Use this for initialization
 	void Start () {
@@ -20,5 +21,6 @@ public class SelectLevel : MonoBehaviour {
 		levelSelected = gameObject.name;
 		Debug.Log (levelSelected);
 		SceneManager.LoadScene ("QuizScene");
+
 	}
 }

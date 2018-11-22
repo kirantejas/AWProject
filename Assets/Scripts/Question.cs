@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Question : MonoBehaviour {
 
+    
 	List<string> question = new List<string>(){"Member function of a class can ________", "Which among the following is not a necessary condition for \nconstructors?", "In which access should a constructor be defined, so that \nobject of the class can be created in any function?", "Which constructor is called while assigning some object \nwith another?", "Which type of constructor can’t have a return type?",
 		"Which among the following is not a necessary condition for \nconstructors?", "How to access members of the class inside a member \nfunction?", "A member function can _______________ of the same \nclass", "Which member function doesn’t require any return type?", "Which among the following is not possible for \nmember function?",
 		"How members of an object are accessed?", "Which definition best describes an object?", "Which specifier applies only to the constructors?", "Which of the following is not feature of pure OOP?", "Which among the following doesn’t come under OOP \nconcept?"
@@ -35,7 +36,7 @@ public class Question : MonoBehaviour {
 	void Start () {
 		if (SelectLevel.levelSelected == "Basic") {
 			index = -1;
-			Debug.Log (index);	
+			Debug.Log (index);
 		}
 		if (SelectLevel.levelSelected == "Intermediate") {
 			index = 4;
