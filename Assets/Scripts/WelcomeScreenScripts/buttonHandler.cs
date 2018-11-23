@@ -19,6 +19,9 @@ public class buttonHandler : MonoBehaviour {
     private Button backButton;
     private Text instructions;
 
+    private Button startExercise;
+    private Button startQuiz;
+
 
     // Use this for initialization
     void Start ()
@@ -44,6 +47,13 @@ public class buttonHandler : MonoBehaviour {
         myButton_play = GameObject.Find("Button_Start Learning").GetComponent<Button>();
         myButton_play.gameObject.SetActive(false);
 
+        startExercise = GameObject.Find("Button_Exercise").GetComponent<Button>();
+        startExercise.gameObject.SetActive(false);
+
+        startQuiz = GameObject.Find("Button_Quiz").GetComponent<Button>();
+        startQuiz.gameObject.SetActive(false);
+
+
         backButton = getInactiveGameObject("Button_Back").GetComponent<Button>();
         backButton.gameObject.SetActive(true);
 
@@ -68,6 +78,14 @@ public class buttonHandler : MonoBehaviour {
 
         myButton_play = getInactiveGameObject("Button_Start Learning").GetComponent<Button>();
         myButton_play.gameObject.SetActive(true);
+
+        startExercise = getInactiveGameObject("Button_Exercise").GetComponent<Button>();
+        startExercise.gameObject.SetActive(true);
+
+        startQuiz = getInactiveGameObject("Button_Quiz").GetComponent<Button>();
+        startQuiz.gameObject.SetActive(true);
+
+
 
     }
 

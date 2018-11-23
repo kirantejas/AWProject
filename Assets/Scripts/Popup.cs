@@ -16,6 +16,7 @@ public class Popup : MonoBehaviour {
 
     public void Hide()
     {
+        Debug.Log("Close" + window.name);
         window.SetActive(false);
     } 
 

@@ -884,7 +884,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Aim
+  m_Text: 'Exercise 1 - Aim
+
+'
 --- !u!222 &404393550
 CanvasRenderer:
   m_ObjectHideFlags: 0
