@@ -122,7 +122,7 @@ public class Level4 : MonoBehaviour {
 
     public void onClickNext()
     {
-        SceneManager.LoadScene("TutorialHome");
+        SceneManager.LoadScene("WelcomeScreen");
     }
 
     #region Couroutiune
