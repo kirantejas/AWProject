@@ -13,5 +13,7 @@ namespace Assets.Scripts
 
         public static string Email { get; set; }
 
+        public static int Level { get; set; }
+
     }
 }

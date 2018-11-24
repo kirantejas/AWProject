@@ -11,9 +11,11 @@ public class Exercise1 : MonoBehaviour {
     public static bool isRotateCar1;
     public static bool isRotateCar2;
     float timeLeft = 5.0f;
+    string order;
     bool show = true;
     // Use this for initialization
     void Start () {
+        order = "";
         isRotateCar1 = false;
         isRotateCar2 = false;
     }
@@ -50,26 +52,39 @@ public class Exercise1 : MonoBehaviour {
             car2 = GameObject.Find("greenjeep2");
             car2.transform.Rotate(new Vector3(0, Time.deltaTime * 500, 0));
         }
+
+        if(order.Length == 4)
+        {
+            if (order == "2134")
+            {
+                SceneManager.LoadScene("Exercise2");
+            }
+            order = "";
+        }
     }
 
     public void RotateCar1()
     {
         isRotateCar1 = true;
+        order += "1"; 
     }
 
     public void RotateCar2()
     {
         isRotateCar2 = true;
+        order += "2";
     }
 
     public void StopCar1()
     {
         isRotateCar1 = false;
+        order += "3";
     }
 
     public void StopCar2()
     {
         isRotateCar2 = false;
+        order += "4";
     }
 
     public void onClickHome()

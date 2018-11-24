@@ -5,25 +5,25 @@ using UnityEngine;
 public class QuiSceneColor : MonoBehaviour {
 
     Camera cm;
-    public Color yellow = Color.yellow;
-    public Color blue = Color.blue;
-    public Color magenta = Color.magenta;
+    public Color green = new Color(0.2f, 0.4f, 0);
+    public Color yellow = new Color(0.8f, 0.8f, 0);
+    public Color red = new Color (0.5f, 0, 0);
 
     // Use this for initialization
     void Start () {
         cm = GetComponent<Camera>();
         
-        if (SelectLevel.levelSelected == "Basic")
+        if (buttonHandler.levelSelected == "Basic")
+        {
+            cm.backgroundColor = green;
+        }
+        if (buttonHandler.levelSelected == "Intermediate")
         {
             cm.backgroundColor = yellow;
         }
-        if (SelectLevel.levelSelected == "Intermediate")
+        if (buttonHandler.levelSelected == "Advanced")
         {
-            cm.backgroundColor = blue;
-        }
-        if (SelectLevel.levelSelected == "Advanced")
-        {
-            cm.backgroundColor = magenta;
+            cm.backgroundColor = red;
         }
     }
 	

@@ -40,6 +40,11 @@ public class TutorialHome : MonoBehaviour {
         SceneManager.LoadScene("Level4");
     }
 
+    public void onClickHomeButton()
+    {
+        SceneManager.LoadScene("WelcomeScreen");
+    }
+
     #region Couroutiune
 
     IEnumerator MakeApiRequest(int UserId, int Level, int BtnId, int IsExercise)

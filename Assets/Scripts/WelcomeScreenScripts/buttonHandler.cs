@@ -19,9 +19,9 @@ public class buttonHandler : MonoBehaviour {
     private Button backButton;
     private Text instructions;
 
+    public static string levelSelected;
     private Button startExercise;
     private Button startQuiz;
-
 
     // Use this for initialization
     void Start ()
@@ -117,7 +117,30 @@ public class buttonHandler : MonoBehaviour {
 
     public void onClickStartQuiz()
     {
-        SceneManager.LoadScene("LevelScene");
+        if (Assets.Scripts.globalClass.Level == 1)
+        {
+            levelSelected = "Basic";
+            Question.index = -1;
+            SceneManager.LoadScene("QuizScene");
+        }
+        else if (Assets.Scripts.globalClass.Level == 2)
+        {
+            levelSelected = "Intermediate";
+            Question.index = 4;
+            SceneManager.LoadScene("QuizScene");
+        }
+        else if (Assets.Scripts.globalClass.Level == 3)
+        {
+            levelSelected = "Advanced";
+            Question.index = 9;
+            SceneManager.LoadScene("QuizScene");
+        }
+        else
+        {
+            levelSelected = "Intermediate";
+            Question.index = 4;
+            SceneManager.LoadScene("QuizScene");
+        }
     }
 
     #region Couroutiune
