@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SelectLevel : MonoBehaviour {
+public class ScoreReportHomeButton : MonoBehaviour {
 
- 
-	public static string levelSelected;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,9 +15,8 @@ public class SelectLevel : MonoBehaviour {
 		
 	}
 
-	void OnMouseDown(){
-		levelSelected = gameObject.name;
-		Debug.Log (levelSelected);
-		SceneManager.LoadScene ("QuizScene");
-	}
+    public void onClickHome()
+    {
+        SceneManager.LoadScene("WelcomeScreen");
+    }
 }

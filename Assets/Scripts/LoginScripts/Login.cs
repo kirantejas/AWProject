@@ -79,7 +79,7 @@ public class Login : MonoBehaviour {
         Email = GUI.TextField(new Rect(100, 130, (Screen.width / 2), 40), Email, 25);
 
         GUI.Label(new Rect(100, 190, 150, 30), "Password:", Label);
-        Password = GUI.TextField(new Rect(100, 220, (Screen.width / 2) , 40), Password);
+        Password = GUI.PasswordField(new Rect(100, 220, (Screen.width / 2) , 40), Password, "*"[0]);
 
     }
 
@@ -97,10 +97,10 @@ public class Login : MonoBehaviour {
         NEmail = GUI.TextField(new Rect(100, 110, (Screen.width / 2), 40), NEmail);
 
         GUI.Label(new Rect(100, 160, 150, 30), "Password:", Label);
-        NPassword = GUI.TextField(new Rect(100, 190, (Screen.width / 2), 40), NPassword);
+        NPassword = GUI.PasswordField(new Rect(100, 190, (Screen.width / 2), 40), NPassword, "*"[0]);
 
         GUI.Label(new Rect(100, 240, 150, 30), "Confirm Password:", Label);
-        NCPassword = GUI.TextField(new Rect(100, 270, (Screen.width / 2), 40), NCPassword);
+        NCPassword = GUI.PasswordField(new Rect(100, 270, (Screen.width / 2), 40), NCPassword, "*"[0]);
 
         GUI.Label(new Rect(100, 320, 140, 30), "Hand Preference", Label);
         HandPreference = GUI.TextField(new Rect(100, 350, (Screen.width / 2), 40), HandPreference);
@@ -181,12 +181,11 @@ public class Login : MonoBehaviour {
                 Assets.Scripts.globalClass.Email = json.email;
                 Assets.Scripts.globalClass.HandPreference = json.hand_preference;
                 Assets.Scripts.globalClass.Age = json.age;
+                Assets.Scripts.globalClass.Level = json.level;
                 SceneSwitcher();
             }
         }
         Debug.Log("Before Sceneswitcher function");
-        
-
     }
 
     #endregion
@@ -202,5 +201,7 @@ public class Response
     public int id { get; set; }
     public int status_code { get; set; }
     public string text { get; set; }
+
+    public int level { get; set; }
 
 }

@@ -34,14 +34,17 @@ public class Question : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (SelectLevel.levelSelected == "Basic") {
+        count = 0;
+        nextQuestion = -1;
+        score = 0;
+		if (buttonHandler.levelSelected == "Basic") {
 			index = -1;
 			Debug.Log (index);
 		}
-		if (SelectLevel.levelSelected == "Intermediate") {
+		if (buttonHandler.levelSelected == "Intermediate") {
 			index = 4;
 		}
-		if (SelectLevel.levelSelected == "Advanced") {
+		if (buttonHandler.levelSelected == "Advanced") {
 			Debug.Log ("check");
 			index = 9;
 		}
@@ -56,7 +59,7 @@ public class Question : MonoBehaviour {
 		}
 		if (nextQuestion == 0) {
 			GetComponent<TextMesh> ().text = question [index];
-		}
+        }
 		if (preventClicking == "n") {
 			if (choiceSelected == "y") {
 				preventClicking = "y";
@@ -65,14 +68,14 @@ public class Question : MonoBehaviour {
 				if (correctAnswer [index] == selectedAnswer) {
 					score++;
 					resultObj.GetComponent<TextMesh> ().text = "Correct!! Click Next to Continue.";
-					selectedAns = GameObject.Find (selectedAnswer);
+                    selectedAns = GameObject.Find (selectedAnswer);
 					selectedAns.GetComponent<TextMesh> ().color = new Color (0, 1, 0);
 					scoreObj = GameObject.Find ("Score");
 					scoreObj.GetComponent<TextMesh> ().text = "Score : " + score;
 
-				}  else {
+                }  else {
 					resultObj.GetComponent<TextMesh> ().text = "Incorrect!! Click Next to Continue.";
-					selectedAns = GameObject.Find (selectedAnswer);
+                    selectedAns = GameObject.Find (selectedAnswer);
 					selectedAns.GetComponent<TextMesh> ().color = new Color (1, 0, 0, 1);
 					correctAns = GameObject.Find (correctAnswer [index]);
 					correctAns.GetComponent<TextMesh> ().color = new Color (0, 1, 0);
