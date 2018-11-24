@@ -7,10 +7,12 @@ public class Exercise1 : MonoBehaviour {
 
     GameObject car1;
     GameObject car2;
+    GameObject window;
     public static bool isRotateCar1;
     public static bool isRotateCar2;
     float timeLeft = 5.0f;
     string order;
+    bool show = true;
     // Use this for initialization
     void Start () {
         order = "";
@@ -20,6 +22,7 @@ public class Exercise1 : MonoBehaviour {
     public GameObject getInactiveInCanvas(string objectName)
     {
         GameObject filedname = null;
+
         Transform[] trans = GameObject.Find("Canvas").GetComponentsInChildren<Transform>(true);
         foreach (Transform t in trans)
         {
@@ -33,9 +36,9 @@ public class Exercise1 : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         timeLeft -= Time.deltaTime;
-        if (timeLeft < 0)
+        if (timeLeft < 0 && show)
         {
-            GameObject window = getInactiveInCanvas("popupAim");
+            window = getInactiveInCanvas("popupHelp");
             window.SetActive(true);
         }
         if (isRotateCar1)
@@ -91,7 +94,13 @@ public class Exercise1 : MonoBehaviour {
 
     public void onClickAim()
     {
-
+        GameObject window1 = getInactiveInCanvas("popupAim");
+        window1.SetActive(true);
+    }
+    public void onClickClose()
+    {
+        window.SetActive(false);
+        show = false;
     }
     public void onOpenTutorial()
     {
