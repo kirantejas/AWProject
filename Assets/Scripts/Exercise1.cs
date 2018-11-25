@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Exercise1 : MonoBehaviour {
@@ -10,9 +11,10 @@ public class Exercise1 : MonoBehaviour {
     GameObject window;
     public static bool isRotateCar1;
     public static bool isRotateCar2;
-    float timeLeft = 5.0f;
+    float timeLeft = 20.0f;
     string order;
     bool show = true;
+    public Button nextButton;
     // Use this for initialization
     void Start () {
         order = "";
@@ -53,13 +55,12 @@ public class Exercise1 : MonoBehaviour {
             car2.transform.Rotate(new Vector3(0, Time.deltaTime * 500, 0));
         }
 
-        if(order.Length == 4)
+        if(order.Length >= 4)
         {
-            if (order == "2134")
+            if (order.Substring(order.Length-4) == "2134")
             {
-                SceneManager.LoadScene("Exercise2");
+                nextButton.gameObject.SetActive(true);
             }
-            order = "";
         }
     }
 
@@ -105,5 +106,10 @@ public class Exercise1 : MonoBehaviour {
     public void onOpenTutorial()
     {
         SceneManager.LoadScene("Level3");
+    }
+
+    public void onClickNext()
+    {
+        SceneManager.LoadScene("Exercise2");
     }
 }
