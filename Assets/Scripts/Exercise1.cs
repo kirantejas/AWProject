@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Assets.Scripts;
 
 public class Exercise1 : MonoBehaviour {
 
@@ -11,15 +12,22 @@ public class Exercise1 : MonoBehaviour {
     GameObject window;
     public static bool isRotateCar1;
     public static bool isRotateCar2;
-    float timeLeft = 20.0f;
+    float timeLeft = 30.0f;
     string order;
-    bool show = true;
     public Button nextButton;
     // Use this for initialization
     void Start () {
         order = "";
         isRotateCar1 = false;
         isRotateCar2 = false;
+        if (globalClass.HandPreference == 0)
+        {
+            GameObject[] btns = GameObject.FindGameObjectsWithTag("movableButton");
+            foreach (GameObject btn in btns)
+            {
+                btn.transform.Translate(new Vector3(-750, 0, 0));
+            }
+        }
     }
     public GameObject getInactiveInCanvas(string objectName)
     {
@@ -38,10 +46,11 @@ public class Exercise1 : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         timeLeft -= Time.deltaTime;
-        if (timeLeft < 0 && show)
+        if (timeLeft < 0)
         {
             window = getInactiveInCanvas("popupHelp");
             window.SetActive(true);
+            timeLeft = 30;
         }
         if (isRotateCar1)
         {
@@ -101,7 +110,6 @@ public class Exercise1 : MonoBehaviour {
     public void onClickClose()
     {
         window.SetActive(false);
-        show = false;
     }
     public void onOpenTutorial()
     {
