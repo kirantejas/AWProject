@@ -11,15 +11,13 @@ public class Level1 : MonoBehaviour
     DateTime startTime;
     DateTime endTime;
     TimeSpan timeDiff;
-    String alignment;
 
     private readonly string url = "http://ramesh8856.pythonanywhere.com/";
     // Use this for initialization
     void Start()
     {
         startTime = DateTime.Now;
-        alignment = "left";
-        if (alignment.Trim().Equals("left"))
+        if (globalClass.HandPreference == 0)
         {
             GameObject[] btns = GameObject.FindGameObjectsWithTag("movableButton");
             foreach (GameObject btn in btns)
@@ -48,8 +46,15 @@ public class Level1 : MonoBehaviour
         StartCoroutine(MakeApiRequest(globalClass.Id, 1, 2, 0));
         GameObject car;
         car = GameObject.Find("jeep");
-        car.gameObject.SetActive(false);
-       
+        if (car == null)
+        {
+            GameObject windowError = getInactiveInCanvas("popupError");
+            windowError.SetActive(true);
+        }
+        else
+        {
+            car.gameObject.SetActive(false);
+        }
     }
 
     public void ManButtonCreate()
@@ -65,7 +70,14 @@ public class Level1 : MonoBehaviour
         StartCoroutine(MakeApiRequest(globalClass.Id, 1, 4, 0));
         GameObject man;
         man = GameObject.Find("BlueSuitFree01");
-        man.gameObject.SetActive(false);
+        if (man == null)
+        {
+            GameObject windowError = getInactiveInCanvas("popupError");
+            windowError.SetActive(true);
+        } else
+        {
+            man.gameObject.SetActive(false);
+        }
     }
 
     public void TreeButtonCreate()
@@ -81,7 +93,15 @@ public class Level1 : MonoBehaviour
         StartCoroutine(MakeApiRequest(globalClass.Id, 1, 6, 0));
         GameObject tree;
         tree = GameObject.Find("Palm_Tree");
-        tree.gameObject.SetActive(false);
+        if (tree == null)
+        {
+            GameObject windowError = getInactiveInCanvas("popupError");
+            windowError.SetActive(true);
+        }
+        else
+        {
+            tree.gameObject.SetActive(false);
+        }
     }
 
     public GameObject getInactiveGameObject(string objectName)
