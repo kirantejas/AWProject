@@ -1305,9 +1305,13 @@ Prefab:
       value: 'Calling member functions
 
 
+        Stop, Rotate are the methods defined on both the wheel and car classes. Upon
+        click of any of the buttons corresponding member functions are executed.
 
-        Stop, Rotate are the methods defined on both the wheel and car classes. Up
-        on click of any of the buttons corresponding member functions are executed.'
+
+        Example Code: wheel.Rotate(); wheel.Stop();
+
+        car.Rotate(); car.Stop();'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 249ea362fd7ffd346a6c50f5111cc228, type: 2}

@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Assets.Scripts;
+using System;
 
 public class Exercise1 : MonoBehaviour {
 
+    private readonly string url = "http://ramesh8856.pythonanywhere.com/";
     GameObject car1;
     GameObject car2;
     GameObject window;
@@ -15,8 +17,14 @@ public class Exercise1 : MonoBehaviour {
     float timeLeft = 30.0f;
     string order;
     public Button nextButton;
+
+    DateTime startTime;
+    DateTime endTime;
+    TimeSpan timeDiff;
+
     // Use this for initialization
     void Start () {
+        startTime = DateTime.Now;
         order = "";
         isRotateCar1 = false;
         isRotateCar2 = false;
@@ -99,6 +107,8 @@ public class Exercise1 : MonoBehaviour {
 
     public void onClickHome()
     {
+        timeDiff = DateTime.Now - startTime;
+        StartCoroutine(LogLevelStats(globalClass.Id, 5, (int)timeDiff.TotalSeconds));
         SceneManager.LoadScene("WelcomeScreen");
     }
 
@@ -118,6 +128,35 @@ public class Exercise1 : MonoBehaviour {
 
     public void onClickNext()
     {
+        timeDiff = DateTime.Now - startTime;
+        StartCoroutine(LogLevelStats(globalClass.Id, 5, (int)timeDiff.TotalSeconds));
         SceneManager.LoadScene("Exercise2");
     }
+
+    #region Couroutiune
+
+    IEnumerator LogLevelStats(int userId, int level, int time)
+    {
+        WWWForm Form = new WWWForm();
+        Form.AddField("user_id", userId);
+        Form.AddField("level", level);
+        Form.AddField("time", time);
+        WWW CreateAccountWww = new WWW(url + "levelstats", Form);
+        yield return CreateAccountWww;
+
+        if (CreateAccountWww.error != null)
+        {
+            Debug.LogError("Cannot connect to Level stats creation");
+        }
+        else
+        {
+            string CreateAccountReturn = CreateAccountWww.text;
+            if (CreateAccountReturn == "success")
+            {
+                Debug.Log("Success: Level stats log entry");
+
+            }
+        }
+    }
+    #endregion
 }

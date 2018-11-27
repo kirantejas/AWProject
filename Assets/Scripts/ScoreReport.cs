@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class ScoreReport : MonoBehaviour {
     private readonly string url = "http://ramesh8856.pythonanywhere.com/";
 
     // Use this for initialization
     void Start () {
+        Assets.Scripts.globalClass.quizDuration = DateTime.Now - Assets.Scripts.globalClass.quizStartTime;
+
         Debug.Log(Assets.Scripts.globalClass.Id);
         Debug.Log(Question.score);
         GetComponent<TextMesh> ().text = "Quiz is Complete. Your score is " + Question.score;
@@ -40,7 +43,7 @@ public class ScoreReport : MonoBehaviour {
                 Assets.Scripts.globalClass.Level = 2;
             }
         }
-        StartCoroutine(MakeApiRequest(Assets.Scripts.globalClass.Id, Assets.Scripts.globalClass.Level, Question.score, 0));
+        StartCoroutine(MakeApiRequest(Assets.Scripts.globalClass.Id, Assets.Scripts.globalClass.Level, Question.score, (int)Assets.Scripts.globalClass.quizDuration.TotalSeconds));
     }
 	
 	// Update is called once per frame

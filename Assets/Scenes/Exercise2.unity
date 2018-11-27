@@ -436,6 +436,12 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114793873208016614, guid: 249ea362fd7ffd346a6c50f5111cc228,
+        type: 2}
+      propertyPath: m_Text
+      value: In this exercise, write code to create a Car class object. The name of
+        this object should be car1. Click Submit button to test the code.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 249ea362fd7ffd346a6c50f5111cc228, type: 2}
   m_IsPrefabParent: 0
@@ -614,7 +620,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1872041160}
         m_MethodName: onClickHome
         m_Mode: 1
         m_Arguments:
@@ -931,7 +937,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 904397821}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1872041160}
+        m_MethodName: onClickNext
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &904397821

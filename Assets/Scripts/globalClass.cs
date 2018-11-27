@@ -15,5 +15,8 @@ namespace Assets.Scripts
 
         public static int Level { get; set; }
 
+        public static DateTime quizStartTime { get; set; }
+
+        public static TimeSpan quizDuration { get; set; }
     }
 }

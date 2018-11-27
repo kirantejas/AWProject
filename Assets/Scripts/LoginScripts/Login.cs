@@ -40,15 +40,15 @@ public class Login : MonoBehaviour {
     }
 
     void OnGUI() {
-        GUI.skin.textField.fontSize = 20;
+        GUI.skin.textField.fontSize = 50;
 
-        GUI.skin.button.fontSize = 20;
+        GUI.skin.button.fontSize = 50;
 
         Heading = new GUIStyle();
-        Heading.fontSize = 32;
+        Heading.fontSize = 60;
 
         Label = new GUIStyle();
-        Label.fontSize = 20;
+        Label.fontSize = 50;
 
         //Label.border = ;
         //Label.
@@ -65,21 +65,21 @@ public class Login : MonoBehaviour {
     #region Custom methods
     void LoginGUI() {
         GUI.Box(new Rect(100, 20, Screen.width, Screen.height), "Login", Heading);
-        if(GUI.Button(new Rect(100, 290, 180, 40), "Create Account"))
+        if(GUI.Button(new Rect(100, 440, 370, 80), "Create Account"))
         {
             currentMenu = "CreateAccount";
         }
 
-        if(GUI.Button(new Rect(300, 290, 100, 40), "Login"))
+        if(GUI.Button(new Rect(550, 440, 150, 80), "Login"))
         {
             StartCoroutine("LoginInit");
         }
 
-        GUI.Label(new Rect(100, 100, 150, 30), "Email:", Label);
-        Email = GUI.TextField(new Rect(100, 130, (Screen.width / 2), 40), Email, 25);
+        GUI.Label(new Rect(100, 120, 150, 70), "Email:", Label);
+        Email = GUI.TextField(new Rect(100, 190, (Screen.width / 2), 70), Email, 25);
 
-        GUI.Label(new Rect(100, 190, 150, 30), "Password:", Label);
-        Password = GUI.PasswordField(new Rect(100, 220, (Screen.width / 2) , 40), Password, "*"[0]);
+        GUI.Label(new Rect(100, 280, 150, 50), "Password:", Label);
+        Password = GUI.PasswordField(new Rect(100, 340, (Screen.width / 2) , 70), Password, "*"[0]);
 
     }
 
@@ -93,22 +93,22 @@ public class Login : MonoBehaviour {
         GUI.Box(new Rect(100, 20, Screen.width, Screen.height), "Create Account", Heading);
         
 
-        GUI.Label(new Rect(100, 80, 150, 30), "Email:", Label);
-        NEmail = GUI.TextField(new Rect(100, 110, (Screen.width / 2), 40), NEmail);
+        GUI.Label(new Rect(100, 100, 150, 30), "Email:", Label);
+        NEmail = GUI.TextField(new Rect(100, 160, (Screen.width / 2), 70), NEmail);
 
-        GUI.Label(new Rect(100, 160, 150, 30), "Password:", Label);
-        NPassword = GUI.PasswordField(new Rect(100, 190, (Screen.width / 2), 40), NPassword, "*"[0]);
+        GUI.Label(new Rect(100, 240, 150, 30), "Password:", Label);
+        NPassword = GUI.PasswordField(new Rect(100, 300, (Screen.width / 2), 70), NPassword, "*"[0]);
 
-        GUI.Label(new Rect(100, 240, 150, 30), "Confirm Password:", Label);
-        NCPassword = GUI.PasswordField(new Rect(100, 270, (Screen.width / 2), 40), NCPassword, "*"[0]);
+        GUI.Label(new Rect(100, 380, 150, 30), "Confirm Password:", Label);
+        NCPassword = GUI.PasswordField(new Rect(100, 440, (Screen.width / 2), 70), NCPassword, "*"[0]);
 
-        GUI.Label(new Rect(100, 320, 140, 30), "Hand Preference", Label);
-        HandPreference = GUI.TextField(new Rect(100, 350, (Screen.width / 2), 40), HandPreference);
+        GUI.Label(new Rect(100, 530, 140, 30), "Hand Preference", Label);
+        HandPreference = GUI.TextField(new Rect(100, 590, (Screen.width / 2), 70), HandPreference);
 
-        GUI.Label(new Rect(100, 400, 150, 30), "Age", Label);
-        Age = GUI.TextField(new Rect(100, 430, (Screen.width / 2), 40), Age);
+        GUI.Label(new Rect(100, 670, 150, 30), "Age", Label);
+        Age = GUI.TextField(new Rect(100, 730, (Screen.width / 2), 70), Age);
 
-        if (GUI.Button(new Rect(100, 500, 180, 40), "Create Account")) { 
+        if (GUI.Button(new Rect(100, 840, 380, 100), "Create Account")) { 
         
             //currentMenu = "CreateAccount";
             if (NPassword == NCPassword)
@@ -121,7 +121,7 @@ public class Login : MonoBehaviour {
             }
         }
 
-        if (GUI.Button(new Rect(420, 500, 100, 40), "Back"))
+        if (GUI.Button(new Rect(560, 840, 140, 100), "Back"))
         {
             currentMenu = "Login";
         }

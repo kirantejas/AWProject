@@ -22,7 +22,7 @@ public class Level1 : MonoBehaviour
             GameObject[] btns = GameObject.FindGameObjectsWithTag("movableButton");
             foreach (GameObject btn in btns)
             {
-                btn.transform.Translate(new Vector3(-700, 0, 0));
+                btn.transform.Translate(new Vector3(-390, 0, 0));
             }
         }
     }

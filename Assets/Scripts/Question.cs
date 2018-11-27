@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Question : MonoBehaviour {
 
@@ -34,6 +35,8 @@ public class Question : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Assets.Scripts.globalClass.quizStartTime = DateTime.Now;
+
         count = 0;
         nextQuestion = -1;
         score = 0;

@@ -112,11 +112,13 @@ public class buttonHandler : MonoBehaviour {
 
     public void onClickStartExercise()
     {
+        StartCoroutine(MakeApiRequest(globalClass.Id, 0, 7, 0));
         SceneManager.LoadScene("Exercise1");
     }
 
     public void onClickStartQuiz()
     {
+        StartCoroutine(MakeApiRequest(globalClass.Id, 0, 8, 0));
         if (Assets.Scripts.globalClass.Level == 1)
         {
             levelSelected = "Basic";
