@@ -199,7 +199,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 151143106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 61.913574, y: -0.9000015, z: 0}
+  m_LocalPosition: {x: 21.813599, y: -93.725006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 376930071}
@@ -207,8 +207,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.47334749, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87.5, y: -0.9}
-  m_SizeDelta: {x: 1009.1, y: 63}
+  m_AnchoredPosition: {x: 47.4, y: -93.725}
+  m_SizeDelta: {x: 1237, y: 307.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &151143108
 MonoBehaviour:
@@ -242,7 +242,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The instructions to Play this game are given below:'
+  m_Text: "This application contains tutorials, exercises and Quiz.\nFor all the tutorials
+    and exercises, there is an Aim button which displays the aim of that particular
+    level.\n\t\t\t\t\t\t\t\t\t\t\tHappy Learning!!"
 --- !u!222 &151143109
 CanvasRenderer:
   m_ObjectHideFlags: 0
