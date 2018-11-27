@@ -2011,12 +2011,10 @@ Prefab:
     - target: {fileID: 114793873208016614, guid: 249ea362fd7ffd346a6c50f5111cc228,
         type: 2}
       propertyPath: m_Text
-      value: 'Creating an instance with parameterised constructor
-
-
-        The constructor of the class Car expectes an argument which is the color of
-        the object that is to be created. With different colors passed objects of
-        different colors are created'
+      value: "Creating object with parameterised constructor\n\nThe constructor of
+        the class Car expects an argument which is the color of the object to be created.
+        Car objects of different colors can be created using this.\n\nExample Code:
+        \nCar car1 = new Car(\"Green\");\nCar car2 = new Car(\"Orange\");\n"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 249ea362fd7ffd346a6c50f5111cc228, type: 2}

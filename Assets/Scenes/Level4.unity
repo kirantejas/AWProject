@@ -1408,6 +1408,20 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114793873208016614, guid: 249ea362fd7ffd346a6c50f5111cc228,
+        type: 2}
+      propertyPath: m_Text
+      value: "Calling Public/Private methods\n\nThe public methods of a class can
+        be accessed from outside. Hence, you see method being executed and color of
+        car is updated.\nThe private methods of a class cannot be accessed outside
+        the clas. Hence, you see an error on private button click.\n\nExample Code:
+        \nchangeColor(){\n\tcar1.color = \"Orange\";\n}"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793873208016614, guid: 249ea362fd7ffd346a6c50f5111cc228,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 249ea362fd7ffd346a6c50f5111cc228, type: 2}
   m_IsPrefabParent: 0
