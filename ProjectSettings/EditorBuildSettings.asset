@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Exercise2.unity
     guid: 40726f36cadf51744aa97a16c0479f98
   - enabled: 1
+    path: Assets/Scenes/StatsScreen.unity
+    guid: 82e7cd893193c3241b69512788ab0c6a
+  - enabled: 1
     path: Assets/Scenes/QuizScene.unity
     guid: 061349ffb75804d209c270c8aeedf802
   - enabled: 1

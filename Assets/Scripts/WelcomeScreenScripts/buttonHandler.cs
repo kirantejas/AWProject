@@ -22,6 +22,7 @@ public class buttonHandler : MonoBehaviour {
     public static string levelSelected;
     private Button startExercise;
     private Button startQuiz;
+    private Button stats;
 
     // Use this for initialization
     void Start ()
@@ -53,6 +54,8 @@ public class buttonHandler : MonoBehaviour {
         startQuiz = GameObject.Find("Button_Quiz").GetComponent<Button>();
         startQuiz.gameObject.SetActive(false);
 
+        stats = GameObject.Find("Button_Stats").GetComponent<Button>();
+        stats.gameObject.SetActive(false);
 
         backButton = getInactiveGameObject("Button_Back").GetComponent<Button>();
         backButton.gameObject.SetActive(true);
@@ -85,7 +88,8 @@ public class buttonHandler : MonoBehaviour {
         startQuiz = getInactiveGameObject("Button_Quiz").GetComponent<Button>();
         startQuiz.gameObject.SetActive(true);
 
-
+        stats = getInactiveGameObject("Button_Stats").GetComponent<Button>();
+        stats.gameObject.SetActive(true);
 
     }
 
@@ -143,6 +147,11 @@ public class buttonHandler : MonoBehaviour {
             Question.index = 4;
             SceneManager.LoadScene("QuizScene");
         }
+    }
+
+    public void onClickStats()
+    {
+        SceneManager.LoadScene("StatsScreen");
     }
 
     #region Couroutiune
