@@ -39,6 +39,15 @@ EditorBuildSettings:
     path: Assets/Scenes/StatsScreen.unity
     guid: 82e7cd893193c3241b69512788ab0c6a
   - enabled: 1
+    path: Assets/Scenes/StatsScreen 1.unity
+    guid: bde0153fcbbbac04e8b826f4bdab343d
+  - enabled: 1
+    path: Assets/Scenes/StatsScreen 2.unity
+    guid: f5cf6342046d81947b6dce420d98afe5
+  - enabled: 1
+    path: Assets/Scenes/StatsScreen 3.unity
+    guid: 7df2ecc879ac8724491a96575bf5223a
+  - enabled: 1
     path: Assets/Scenes/QuizScene.unity
     guid: 061349ffb75804d209c270c8aeedf802
   - enabled: 1

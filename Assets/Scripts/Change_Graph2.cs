@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Change_Graph1 : MonoBehaviour
+public class Change_Graph2 : MonoBehaviour
 {
     public RawImage img;
     public string levelSelected;
@@ -18,7 +18,7 @@ public class Change_Graph1 : MonoBehaviour
     // Use this for initialization
     IEnumerator Start()
     {
-        WWW www = new WWW("https://i.ibb.co/whRGVNk/Time-spent-on-each-category-1.png");
+        WWW www = new WWW("https://i.ibb.co/bgh3cpp/Time-spent-on-each-tutorial.png");
         yield return www;
         if (www != null && img != null)
         {
@@ -51,15 +51,9 @@ public class Change_Graph1 : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void onClickNext()
     {
-        SceneManager.LoadScene("StatsScreen 2");
+        SceneManager.LoadScene("StatsScreen 3");
     }
 
     public void onClickHome()
@@ -69,6 +63,6 @@ public class Change_Graph1 : MonoBehaviour
 
     public void onClickPrevious()
     {
-        SceneManager.LoadScene("StatsScreen");
+        SceneManager.LoadScene("StatsScreen 1");
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Change_Graph1 : MonoBehaviour
-{
+public class Change_Graph : MonoBehaviour {
+
     public RawImage img;
     public string levelSelected;
     public Text userLevel;
-
+    
     void Awake()
     {
         img = this.gameObject.GetComponent<RawImage>();
@@ -18,7 +18,7 @@ public class Change_Graph1 : MonoBehaviour
     // Use this for initialization
     IEnumerator Start()
     {
-        WWW www = new WWW("https://i.ibb.co/whRGVNk/Time-spent-on-each-category-1.png");
+        WWW www = new WWW("https://i.ibb.co/vzYxPm5/Percentage-of-users-in-each-level.png");
         yield return www;
         if (www != null && img != null)
         {
@@ -47,19 +47,19 @@ public class Change_Graph1 : MonoBehaviour
         }
         if (userLevel != null && levelSelected != null)
         {
-            userLevel.text = "Your level: " + levelSelected;
+            userLevel.text = "Your level: " + levelSelected; 
         }
     }
 
     // Update is called once per frame
-    void Update()
+    void Update ()
     {
-
+        
     }
 
     public void onClickNext()
     {
-        SceneManager.LoadScene("StatsScreen 2");
+        SceneManager.LoadScene("StatsScreen 1");
     }
 
     public void onClickHome()
@@ -69,6 +69,6 @@ public class Change_Graph1 : MonoBehaviour
 
     public void onClickPrevious()
     {
-        SceneManager.LoadScene("StatsScreen");
+        
     }
 }
